@@ -19,7 +19,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # Create the model
-model = LogisticRegression(max_iter=200)
+model = LogisticRegression(max_iter=150)
 
 # Train the model
 model.fit(X_train, y_train)
@@ -38,7 +38,7 @@ with mlflow.start_run():
 
     # Log parameters
     mlflow.log_param("Model", "LogisticRegression")
-    mlflow.log_param("max_iter", 200)
+    mlflow.log_param("max_iter", 150)
 
     # Log accuracy
     mlflow.log_metric("Accuracy", accuracy)
